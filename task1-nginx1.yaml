@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    author: dilmurod
+    last: final
+  name: nginx1
+  namespace: dilmurod-final
+spec:
+  containers:
+  - image: nginx
+    imagePullPolicy: Always
+    name: nginx1
+    resources: {}

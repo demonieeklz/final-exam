@@ -1,0 +1,2 @@
+master-node1	node-role.kubernetes.io/control-plane=null:NoSchedule
+node4	devops=course:NoSchedule

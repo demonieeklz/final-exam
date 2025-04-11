@@ -1,0 +1,8 @@
+apiVersion: v1
+data:
+  .dockerconfigjson: eyJhdXRocyI6eyJwcm94aW1hX3VhY2FkZW15QGdtYWlsLmNvbSI6eyJ1c2VybmFtZSI6ImRldm9wcyIsInBhc3N3b3JkIjoiZGV2b3BzVGhlQmVzdCIsImF1dGgiOiJaR1YyYjNCek9tUmxkbTl3YzFSb1pVSmxjM1E9In19fQ==
+kind: Secret
+metadata:
+  name: gitlab-registery
+  namespace: dilmurod-final
+type: kubernetes.io/dockerconfigjson

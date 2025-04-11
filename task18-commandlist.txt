@@ -1,0 +1,6 @@
+kubectl api-resources | grep 'longhorn.io/v1beta2' | awk '{print $2}'
+kubectl api-resources -o wide | awk '$3 ~ /longhorn.io\/v1beta2/ && $2 != "" {print $2}'
+kubectl api-resources -o wide | awk '$3 ~ /longhorn.io\/v1beta2/ {print $1}'
+kubectl api-resources -o wide | awk '$3 ~ /longhorn.io\/v1beta2/ {print $2}'
+
+

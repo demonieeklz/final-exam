@@ -1,0 +1,4 @@
+kubectl get pods -n dilmurod-final -l last=final
+kubectl get pods --all-namespaces -l last=final
+kubectl get pods --all-namespaces -l last=final -o wide
+

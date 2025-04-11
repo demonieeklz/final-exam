@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  namespace: dilmurod-final
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+        envFrom:
+        - configMapRef:
+            name: config-info
+        command: ["/bin/sh"]
+        args:
+        - -c
+        - |
+          echo "My name is $AUTHOR and this is my $EXAM_TYPE";
+          nginx -g "daemon off;"

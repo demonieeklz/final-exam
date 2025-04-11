@@ -1,0 +1,33 @@
+dilmurod@Network-PC:dilmurod-final Ω$ kubectl get pods --all-namespaces -l last=final
+NAMESPACE         NAME     READY   STATUS    RESTARTS   AGE
+dilmurod-final    nginx1   1/1     Running   0          10m
+dilmurod-final    nginx2   1/1     Running   0          10m
+fazliddin-final   nginx1   1/1     Running   0          13m
+fazliddin-final   nginx2   1/1     Running   0          14m
+ibrohim-final     nginx1   1/1     Running   0          44m
+ibrohim-final     nginx2   1/1     Running   0          43m
+j-jumanazarov     nginx1   1/1     Running   0          28m
+j-jumanazarov     nginx2   1/1     Running   0          27m
+rakhimjon-final   nginx1   1/1     Running   0          32m
+rakhimjon-final   nginx2   1/1     Running   0          32m
+zoyirjon-final    nginx1   1/1     Running   0          53m
+zoyirjon-final    nginx2   1/1     Running   0          53m
+dilmurod@Network-PC:dilmurod-final Ω$ vim task2
+dilmurod@Network-PC:dilmurod-final Ω$ vim task2-command-to-show.txt
+dilmurod@Network-PC:dilmurod-final Ω$
+dilmurod@Network-PC:dilmurod-final Ω$
+dilmurod@Network-PC:dilmurod-final Ω$
+dilmurod@Network-PC:dilmurod-final Ω$ kubectl get pods --all-namespaces -l last=final -o wide
+NAMESPACE         NAME     READY   STATUS    RESTARTS   AGE   IP              NODE    NOMINATED NODE   READINESS GATES
+dilmurod-final    nginx1   1/1     Running   0          11m   10.233.65.92    node1   <none>           <none>
+dilmurod-final    nginx2   1/1     Running   0          11m   10.233.66.185   node2   <none>           <none>
+fazliddin-final   nginx1   1/1     Running   0          14m   10.233.66.251   node2   <none>           <none>
+fazliddin-final   nginx2   1/1     Running   0          14m   10.233.67.251   node3   <none>           <none>
+ibrohim-final     nginx1   1/1     Running   0          45m   10.233.67.114   node3   <none>           <none>
+ibrohim-final     nginx2   1/1     Running   0          44m   10.233.67.115   node3   <none>           <none>
+j-jumanazarov     nginx1   1/1     Running   0          29m   10.233.66.248   node2   <none>           <none>
+j-jumanazarov     nginx2   1/1     Running   0          28m   10.233.67.65    node3   <none>           <none>
+rakhimjon-final   nginx1   1/1     Running   0          32m   10.233.66.74    node2   <none>           <none>
+rakhimjon-final   nginx2   1/1     Running   0          32m   10.233.65.30    node1   <none>           <none>
+zoyirjon-final    nginx1   1/1     Running   0          53m   10.233.66.252   node2   <none>           <none>
+zoyirjon-final    nginx2   1/1     Running   0          53m   10.233.66.42    node2   <none>           <none>

@@ -1,0 +1,367 @@
+{
+    "apiVersion": "v1",
+    "items": [
+        {
+            "apiVersion": "apps/v1",
+            "kind": "ReplicaSet",
+            "metadata": {
+                "annotations": {
+                    "deployment.kubernetes.io/desired-replicas": "1",
+                    "deployment.kubernetes.io/max-replicas": "2",
+                    "deployment.kubernetes.io/revision": "1"
+                },
+                "creationTimestamp": "2025-04-11T16:22:22Z",
+                "generation": 1,
+                "labels": {
+                    "app": "final-exam",
+                    "pod-template-hash": "665c894c94"
+                },
+                "name": "final-exam-665c894c94",
+                "namespace": "dilmurod-final",
+                "ownerReferences": [
+                    {
+                        "apiVersion": "apps/v1",
+                        "blockOwnerDeletion": true,
+                        "controller": true,
+                        "kind": "Deployment",
+                        "name": "final-exam",
+                        "uid": "e6941332-f514-4d47-bbf3-4a11737028c6"
+                    }
+                ],
+                "resourceVersion": "20487152",
+                "uid": "4713d794-3b41-4b9e-a7cf-912cf519f86e"
+            },
+            "spec": {
+                "replicas": 1,
+                "selector": {
+                    "matchLabels": {
+                        "app": "final-exam",
+                        "pod-template-hash": "665c894c94"
+                    }
+                },
+                "template": {
+                    "metadata": {
+                        "creationTimestamp": null,
+                        "labels": {
+                            "app": "final-exam",
+                            "pod-template-hash": "665c894c94"
+                        }
+                    },
+                    "spec": {
+                        "containers": [
+                            {
+                                "env": [
+                                    {
+                                        "name": "AUTHOR",
+                                        "value": "dilmurod"
+                                    },
+                                    {
+                                        "name": "POD",
+                                        "valueFrom": {
+                                            "fieldRef": {
+                                                "apiVersion": "v1",
+                                                "fieldPath": "metadata.name"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "name": "NODE",
+                                        "valueFrom": {
+                                            "fieldRef": {
+                                                "apiVersion": "v1",
+                                                "fieldPath": "spec.nodeName"
+                                            }
+                                        }
+                                    }
+                                ],
+                                "image": "nvrbckdown/flask-app:final-exam",
+                                "imagePullPolicy": "IfNotPresent",
+                                "name": "flask-app",
+                                "resources": {},
+                                "terminationMessagePath": "/dev/termination-log",
+                                "terminationMessagePolicy": "File"
+                            }
+                        ],
+                        "dnsPolicy": "ClusterFirst",
+                        "restartPolicy": "Always",
+                        "schedulerName": "default-scheduler",
+                        "securityContext": {},
+                        "terminationGracePeriodSeconds": 30
+                    }
+                }
+            },
+            "status": {
+                "availableReplicas": 1,
+                "fullyLabeledReplicas": 1,
+                "observedGeneration": 1,
+                "readyReplicas": 1,
+                "replicas": 1
+            }
+        },
+        {
+            "apiVersion": "apps/v1",
+            "kind": "ReplicaSet",
+            "metadata": {
+                "annotations": {
+                    "deployment.kubernetes.io/desired-replicas": "2",
+                    "deployment.kubernetes.io/max-replicas": "3",
+                    "deployment.kubernetes.io/revision": "1"
+                },
+                "creationTimestamp": "2025-04-11T15:28:54Z",
+                "generation": 1,
+                "labels": {
+                    "app": "flask-application",
+                    "pod-template-hash": "55cbd68f69"
+                },
+                "name": "flask-application-55cbd68f69",
+                "namespace": "dilmurod-final",
+                "ownerReferences": [
+                    {
+                        "apiVersion": "apps/v1",
+                        "blockOwnerDeletion": true,
+                        "controller": true,
+                        "kind": "Deployment",
+                        "name": "flask-application",
+                        "uid": "29bbec72-bebc-4248-8bf1-023797a549cb"
+                    }
+                ],
+                "resourceVersion": "20469686",
+                "uid": "a1ee7bb2-09df-43cc-97f1-61fff118b459"
+            },
+            "spec": {
+                "replicas": 2,
+                "selector": {
+                    "matchLabels": {
+                        "app": "flask-application",
+                        "pod-template-hash": "55cbd68f69"
+                    }
+                },
+                "template": {
+                    "metadata": {
+                        "creationTimestamp": null,
+                        "labels": {
+                            "app": "flask-application",
+                            "pod-template-hash": "55cbd68f69"
+                        }
+                    },
+                    "spec": {
+                        "containers": [
+                            {
+                                "image": "nvrbckdown/flask-app:last-practice",
+                                "imagePullPolicy": "IfNotPresent",
+                                "name": "flask-app",
+                                "resources": {
+                                    "limits": {
+                                        "cpu": "150m",
+                                        "memory": "128Mi"
+                                    },
+                                    "requests": {
+                                        "cpu": "75m",
+                                        "memory": "64Mi"
+                                    }
+                                },
+                                "terminationMessagePath": "/dev/termination-log",
+                                "terminationMessagePolicy": "File"
+                            }
+                        ],
+                        "dnsPolicy": "ClusterFirst",
+                        "restartPolicy": "Always",
+                        "schedulerName": "default-scheduler",
+                        "securityContext": {},
+                        "terminationGracePeriodSeconds": 30
+                    }
+                }
+            },
+            "status": {
+                "availableReplicas": 2,
+                "fullyLabeledReplicas": 2,
+                "observedGeneration": 1,
+                "readyReplicas": 2,
+                "replicas": 2
+            }
+        },
+        {
+            "apiVersion": "apps/v1",
+            "kind": "ReplicaSet",
+            "metadata": {
+                "annotations": {
+                    "deployment.kubernetes.io/desired-replicas": "1",
+                    "deployment.kubernetes.io/max-replicas": "2",
+                    "deployment.kubernetes.io/revision": "1"
+                },
+                "creationTimestamp": "2025-04-11T16:51:05Z",
+                "generation": 1,
+                "labels": {
+                    "app": "frontend-something",
+                    "pod-template-hash": "d47fb476d"
+                },
+                "name": "frontend-something-d47fb476d",
+                "namespace": "dilmurod-final",
+                "ownerReferences": [
+                    {
+                        "apiVersion": "apps/v1",
+                        "blockOwnerDeletion": true,
+                        "controller": true,
+                        "kind": "Deployment",
+                        "name": "frontend-something",
+                        "uid": "3a91fbe0-6694-4b71-be21-e1eef7612a75"
+                    }
+                ],
+                "resourceVersion": "20498181",
+                "uid": "dee8f87a-3844-453a-b8b5-d3e7d5e335a0"
+            },
+            "spec": {
+                "replicas": 1,
+                "selector": {
+                    "matchLabels": {
+                        "app": "frontend-something",
+                        "pod-template-hash": "d47fb476d"
+                    }
+                },
+                "template": {
+                    "metadata": {
+                        "creationTimestamp": null,
+                        "labels": {
+                            "app": "frontend-something",
+                            "pod-template-hash": "d47fb476d"
+                        }
+                    },
+                    "spec": {
+                        "containers": [
+                            {
+                                "image": "nvrbckdown/something",
+                                "imagePullPolicy": "Always",
+                                "livenessProbe": {
+                                    "failureThreshold": 3,
+                                    "initialDelaySeconds": 15,
+                                    "periodSeconds": 10,
+                                    "successThreshold": 1,
+                                    "tcpSocket": {
+                                        "port": 80
+                                    },
+                                    "timeoutSeconds": 1
+                                },
+                                "name": "frontend-something",
+                                "ports": [
+                                    {
+                                        "containerPort": 80,
+                                        "protocol": "TCP"
+                                    }
+                                ],
+                                "resources": {},
+                                "terminationMessagePath": "/dev/termination-log",
+                                "terminationMessagePolicy": "File"
+                            }
+                        ],
+                        "dnsPolicy": "ClusterFirst",
+                        "nodeSelector": {
+                            "kubernetes.io/hostname": "node2"
+                        },
+                        "restartPolicy": "Always",
+                        "schedulerName": "default-scheduler",
+                        "securityContext": {},
+                        "terminationGracePeriodSeconds": 30
+                    }
+                }
+            },
+            "status": {
+                "availableReplicas": 1,
+                "fullyLabeledReplicas": 1,
+                "observedGeneration": 1,
+                "readyReplicas": 1,
+                "replicas": 1
+            }
+        },
+        {
+            "apiVersion": "apps/v1",
+            "kind": "ReplicaSet",
+            "metadata": {
+                "annotations": {
+                    "deployment.kubernetes.io/desired-replicas": "1",
+                    "deployment.kubernetes.io/max-replicas": "2",
+                    "deployment.kubernetes.io/revision": "1"
+                },
+                "creationTimestamp": "2025-04-11T16:06:09Z",
+                "generation": 1,
+                "labels": {
+                    "app": "nginx",
+                    "pod-template-hash": "56c69957b"
+                },
+                "name": "nginx-deployment-56c69957b",
+                "namespace": "dilmurod-final",
+                "ownerReferences": [
+                    {
+                        "apiVersion": "apps/v1",
+                        "blockOwnerDeletion": true,
+                        "controller": true,
+                        "kind": "Deployment",
+                        "name": "nginx-deployment",
+                        "uid": "8beff557-a8a4-4ec4-a956-e9a03ca7adc4"
+                    }
+                ],
+                "resourceVersion": "20480837",
+                "uid": "18563e73-ad7f-4118-aa8d-c45dbad5f39d"
+            },
+            "spec": {
+                "replicas": 1,
+                "selector": {
+                    "matchLabels": {
+                        "app": "nginx",
+                        "pod-template-hash": "56c69957b"
+                    }
+                },
+                "template": {
+                    "metadata": {
+                        "creationTimestamp": null,
+                        "labels": {
+                            "app": "nginx",
+                            "pod-template-hash": "56c69957b"
+                        }
+                    },
+                    "spec": {
+                        "containers": [
+                            {
+                                "args": [
+                                    "-c",
+                                    "echo \"My name is $AUTHOR and this is my $EXAM_TYPE\";\nnginx -g \"daemon off;\"\n"
+                                ],
+                                "command": [
+                                    "/bin/sh"
+                                ],
+                                "envFrom": [
+                                    {
+                                        "configMapRef": {
+                                            "name": "config-info"
+                                        }
+                                    }
+                                ],
+                                "image": "nginx",
+                                "imagePullPolicy": "Always",
+                                "name": "nginx",
+                                "resources": {},
+                                "terminationMessagePath": "/dev/termination-log",
+                                "terminationMessagePolicy": "File"
+                            }
+                        ],
+                        "dnsPolicy": "ClusterFirst",
+                        "restartPolicy": "Always",
+                        "schedulerName": "default-scheduler",
+                        "securityContext": {},
+                        "terminationGracePeriodSeconds": 30
+                    }
+                }
+            },
+            "status": {
+                "availableReplicas": 1,
+                "fullyLabeledReplicas": 1,
+                "observedGeneration": 1,
+                "readyReplicas": 1,
+                "replicas": 1
+            }
+        }
+    ],
+    "kind": "List",
+    "metadata": {
+        "resourceVersion": ""
+    }
+}

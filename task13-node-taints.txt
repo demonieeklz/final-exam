@@ -1,0 +1,17 @@
+master-node1	node-role.kubernetes.io/control-plane=:NoSchedule
+node1	=:
+node2	=:
+node3	=:
+node4	devops=course:NoSchedule
+
+
+
+# via command
+# kubectl get nodes -o jsonpath='{range .items[*]}{.metadata.name}{"\t"}{.spec.taints[*].key}{"="}{.spec.taints[*].value}{":"}{.spec.taints[*].effect}{"\n"}{end}'
+
+master-node1    node-role.kubernetes.io/control-plane=:NoSchedule
+node1   =:
+node2   =:
+node3   =:
+node4   devops=course:NoSchedule
+

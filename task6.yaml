@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: final-exam
+  namespace: dilmurod-final
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: final-exam
+  template:
+    metadata:
+      labels:
+        app: final-exam
+    spec:
+      containers:
+      - name: flask-app
+        image: nvrbckdown/flask-app:final-exam
+        env:
+        - name: AUTHOR
+          value: "dilmurod"
+        - name: POD
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: NODE
+          valueFrom:
+            fieldRef:
+              fieldPath: spec.nodeName

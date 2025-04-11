@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  generation: 1
+  name: frontend-something
+  namespace: dilmurod-final
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: front-dilmurod.sts404.uz
+    http:
+      paths:
+      - backend:
+          service:
+            name: frontend-something
+            port:
+              number: 80
+        path: /
+        pathType: Prefix
+status:
+  loadBalancer: {}

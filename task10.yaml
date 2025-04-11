@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-something
+  namespace: dilmurod-final
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend-something
+  template:
+    metadata:
+      labels:
+        app: frontend-something
+    spec:
+      nodeSelector:
+        kubernetes.io/hostname: node2
+      containers:
+      - name: frontend-something
+        image: nvrbckdown/something
+        ports:
+        - containerPort: 80
+        livenessProbe:
+          tcpSocket:
+            port: 80
+          initialDelaySeconds: 15
+          periodSeconds: 10
