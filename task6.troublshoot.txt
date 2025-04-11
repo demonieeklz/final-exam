@@ -1,0 +1,3 @@
+k -n dilmurod-final logs final-exam-847dc795f9-52j44
+{author:dilmurod,message:Well DONE!,node:node3,pod:final-exam-847dc795f9-52j44}
+
